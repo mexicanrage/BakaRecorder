@@ -85,7 +85,7 @@ fn main() {
     let mut child = Command::new("sh")
         .arg("-c")
         .arg(format!(
-            "gpu-screen-recorder -w screen -f 60 -k h264 -ac opus -r 15 -c mkv -o {} -a default_output -a \"$(pactl get-default-sink).monitor\"",
+            "gpu-screen-recorder -w screen -f 60 -k h264 -ac opus -r 15 -c mkv -o {} -a \"default_output|default_input\"",
             records_path.display()
         ))
         .process_group(0)
